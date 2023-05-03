@@ -4,6 +4,16 @@
  */
 await import("./src/env.mjs");
 
+// Set the NEXTAUTH_URL dynamically
+const NEXTAUTH_URL = process.env.VERCEL_URL
+  ? `https://${process.env.VERCEL_URL}`
+  : "http://localhost:3000";
+
+// Set the public runtime configuration
+const publicRuntimeConfig = {
+  NEXTAUTH_URL,
+};
+
 /** @type {import("next").NextConfig} */
 const config = {
   reactStrictMode: true,
