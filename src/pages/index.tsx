@@ -11,20 +11,22 @@ const Home: NextPage = () => {
     <div>
       <div className="flex flex-col items-center justify-center bg-slate-500">
         {
-          status !== "authenticated" &&
+          isNotAuth &&
           <button onClick={() => { void signIn("instagram"); }}>
             <div>Sign in</div>
           </button>
         }
         {
-          isAuth &&
-          <button onClick={() => { void signOut(); }}>
-            <div>Sign out</div>
-          </button> &&
-          <Link href="/user-profile">
-            <a>My profile</a>
-          </Link> &&
-          <div>WIP: here will be search wizard</div>
+          isAuth && (
+            <>
+              <button onClick={() => { void signOut(); }}>
+                Sign out
+              </button>
+              <Link href="/user-profile">
+                My profile
+              </Link>
+              <div>WIP: here will be search wizard</div>
+            </>)
         }
       </div>
       <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c]">
