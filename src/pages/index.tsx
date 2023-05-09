@@ -1,6 +1,7 @@
 import { type NextPage } from "next";
 import Link from "next/link";
 import { signIn, signOut, useSession } from "next-auth/react"
+import SearchBar from "~/components/SearchBar";
 
 const Home: NextPage = () => {
   const { data: session, status } = useSession();
@@ -25,7 +26,7 @@ const Home: NextPage = () => {
               <Link href="/user-profile">
                 My profile
               </Link>
-              <div>WIP: here will be search wizard</div>
+              <SearchBar />
             </>)
         }
       </div>
