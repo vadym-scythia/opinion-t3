@@ -1,14 +1,20 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { api } from "~/utils/api";
 
 const SearchBar = () => {
     const [searchQuery, setSearchQuery] = useState("");
+    const [results, setResults] = useState<any>(null);
 
-    const handleSearch = () => {
-        // Call API here
-        console.log("Searching for:", searchQuery);
-
+    const handleSearch = async () => {
+        const response = await fetch(`/api/search?query=${searchQuery}`);
+        const data = await response.json();
+        setResults(data);
         setSearchQuery("");
     };
+
+    useEffect(() => {
+        console.log("Found:", results);
+    }, [results]);
 
     return (
         <div className="flex items-center">
