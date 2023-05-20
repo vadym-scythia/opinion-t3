@@ -1,10 +1,13 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { getServerSession } from "next-auth/next"
-import { authOptions } from "./auth/[...nextauth]"
+import { getSession } from "next-auth/react"
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-    const session = await getServerSession(req, res, authOptions)
+    const session = await getSession({ req });
+    console.log(session);
     const { query } = req.query;
+    console.log(query);
+    const accessToken = session?.accessToken;
+    console.log(accessToken);
 
     if (session) {
         res.send({
