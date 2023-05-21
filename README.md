@@ -1,28 +1,8 @@
-# Create T3 App
+# Problem
+Instagram is a platform with over 1 billion user per day. In such mess of activity it is really important to understand with what type of user account you are working on. Is this personal user account reliable? Is this business account responsible? Is this creator account honest? So the main problem is that Instagram, as a huge media platform with personal, business and creator’s activities, doesn’t really have feedback system of its users’ accounts.
+# Solution
+Create web resource where Instagram user can write, read and evaluate feedback about another user/user account. This resource will utilize Instagram API to authorize user, find another user, differentiate users. This web resource is OpiniOn.
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
-
-## What's next? How do I make an app with this?
-
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
-
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
-
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
-
-## Learn More
-
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
-
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
-
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
-
-## How do I deploy this?
-
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+This is like [GetContact](https://www.getcontact.com/en/) for Instagram with focus on marketplace for Business and Creator accounts.
+# Why it is not working.
+Searching of user accounts is not available with current version (21May2023) of Instagram API. [Proof](https://stackoverflow.com/questions/29621771/instagram-api-search-users), try this https://api.instagram.com/v1/users/search?q=jack&access_token=YOUR_ACCESS_TOKEN
